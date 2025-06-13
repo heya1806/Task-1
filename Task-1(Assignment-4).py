@@ -1,12 +1,12 @@
-# Factorial using a function
 
-n = int(input('Enter a number: '))
+try:
+    file = open('sample.txt', 'r')
+    print('Reading file content: ')
+    reading_file1 = file.readline()
+    print('Line 1:', reading_file1, end ='')
+    reading_file2 = file.readline()
+    print('Line 2:',reading_file2)
+    file.close()
 
-def factorial(n):
-    if n < 2:
-        return 1
-    else:
-        return n * (factorial(n-1))
-
-result = factorial(n)
-print( 'Factorial of', n, 'is:', result)
+except FileNotFoundError:
+    print('Error: The file', "sample.txt", 'was not found.')
